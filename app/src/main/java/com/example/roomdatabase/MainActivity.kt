@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         var db = DBHelper.checkDB(this)
-        contactlist = db.contactDao().getAllContact()
+        contactlist = db.contactDao().getAllContact() as ArrayList<ContactEntity>
 
         val adapter = Contact_Adapter(contactlist as ArrayList<ContactEntity>)
         binding.rvMain.layoutManager = LinearLayoutManager(this)
